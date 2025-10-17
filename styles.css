@@ -1,0 +1,96 @@
+/* Main Body Styles */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8fafc; /* slate-50 */
+  color: #1e293b; /* slate-800 */
+}
+
+/* Chart Container Styles */
+.chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  max-height: 50vh;
+}
+
+/* Responsive Chart Height */
+@media (min-width: 768px) {
+  .chart-container {
+    height: 500px;
+  }
+}
+
+/* Navigation Link Styles */
+.nav-link {
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #0284c7; /* sky-600 */
+}
+
+/* Project Card Animation Styles */
+.project-card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-details.open {
+  max-height: 1000px; /* Large enough to fit content */
+}
+
+/* Technology Tag Styles */
+.tech-tag {
+  background-color: #e0f2fe; /* sky-100 */
+  color: #0c4a6e; /* sky-900 */
+  font-weight: 500;
+}
+
+/* Profile Photo Styles */
+.rounded-full {
+  transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.rounded-full:hover {
+  transform: scale(1.05);
+  border-color: #0369a1; /* sky-700 */
+}
+
+/* Contact Modal Styles */
+#contactModal {
+  display: none;
+  animation: fadeIn 0.3s ease-out;
+}
+
+#contactModal.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#contactModal .bg-white {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
